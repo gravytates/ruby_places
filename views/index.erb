@@ -1,0 +1,33 @@
+<h1>Places I've Been!</h1>
+
+<p>
+  Here are all the plaes you've been:
+</p>
+
+<ul>
+  <% @places.each() do |place| %>
+    <li><%= place.location() %>
+      <ul>
+        <li><%= place.date() %></li>
+        <li><%= place.notes() %></li>
+      </ul>
+    </li>
+  <% end %>
+</ul>
+
+<p>
+  Add a new location:
+</p>
+
+<form action="/result" method="post">
+  <label for="location">Place Location</label><br>
+  <input type="text" name="location"><br>
+
+  <label for="date">Date you visited</label><br>
+  <input type="text" name="date"><br>
+
+  <label for="notes">Additional Notes</label><br>
+  <textarea name="notes">Enter text here...</textarea>
+
+  <button type="submit">Add!</button>
+</form>
